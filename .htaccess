@@ -1,0 +1,6 @@
+Options All -Indexes
+
+RewriteEngine On 
+ RewriteBase /Bijoux_MVC/
+
+ RewriteRule ^([-a-zA-Z0-9]+)$ index.php?page=$1
