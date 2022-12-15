@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : mer. 07 déc. 2022 à 19:35
+-- Hôte : localhost
+-- Généré le : lun. 12 déc. 2022 à 01:33
 -- Version du serveur : 10.4.25-MariaDB
 -- Version de PHP : 8.1.10
 
@@ -53,9 +53,42 @@ CREATE TABLE `produit` (
   `id` int(11) NOT NULL,
   `libelle` varchar(11) NOT NULL,
   `prix` int(11) NOT NULL,
-  `quantité` int(11) NOT NULL,
-  `descriptif` text NOT NULL
+  `quantite` int(11) NOT NULL,
+  `descriptif` text NOT NULL,
+  `img` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `produit`
+--
+
+INSERT INTO `produit` (`id`, `libelle`, `prix`, `quantite`, `descriptif`, `img`) VALUES
+(1, 'Ring', 34, 58, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', ''),
+(2, 'Braclet', 100, 98, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', ''),
+(3, 'ffffffff', 4, 4, 'ring ring', ''),
+(6, 'ring', 12, 22, 'FJG', '1.jpg'),
+(7, 'G', 2, 3, 'KJH', '1.jpg'),
+(9, 'jh', 65, 57, 'lkjh', '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
+--
+
+CREATE TABLE `user` (
+  `fullname` varchar(20) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`fullname`, `username`, `password`) VALUES
+('a', 'a', '$2y$12$m3GVpzPQ9EakX'),
+('a', 'a', '$2y$12$bxzgrZN/obZoI');
 
 --
 -- Index pour les tables déchargées
@@ -74,6 +107,12 @@ ALTER TABLE `client`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `produit`
+--
+ALTER TABLE `produit`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -88,6 +127,12 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `client`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `produit`
+--
+ALTER TABLE `produit`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

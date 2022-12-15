@@ -1,1 +1,5 @@
-test delete
+<?php
+
+instances::deleteInstance();
+
+?>
